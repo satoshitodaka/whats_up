@@ -30,4 +30,10 @@ module WhatsUp
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
+
+  config.generators do |g|
+    g.skip_routes true
+    g.assets false
+    g.helper false
+  end
 end
