@@ -1,5 +1,7 @@
 {
   "name": "whats_up",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.3"
+  }
 }
