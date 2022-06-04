@@ -15,7 +15,7 @@
 
 Rails.application.routes.draw do
   # ログインしている時のルートパス
-  constraints -> request { request.session[:user_id].present? } do
+  constraints ->(request) { request.session[:user_id].present? } do
     root 'posts#index'
   end
   # ログインしていない時のルートパス
