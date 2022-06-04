@@ -18,7 +18,7 @@
 #
 FactoryBot.define do
   factory :post do
-    body { "MyText" }
-    user { nil }
+    body { Faker::Hacker.say_something_smart }
+    user
   end
 end
