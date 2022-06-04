@@ -14,10 +14,17 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
-  root 'users#new'
+  # ログインしている時のルートパス
+  constraints -> request { request.session[user_id].present? } do
+    root 'posts#index'
+  end
+  # ログインしていない時のルートパス
+  root 'user_sessions#new'
 
-  resources :users, only: %i[new create]
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+
+  resources :users, only: %i[new create]
+  resources :posts
 end
