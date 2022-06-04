@@ -12,7 +12,7 @@
           = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
         .col-6 
           = simple_format(@post.body)
-          - if current_user&.own(@post)
+          - if current_user&.own?(@post)
             .ml-auto
               = link_to post_path(post), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do 
                 = icon 'far', 'trash-alt', class: 'fa-lg'
