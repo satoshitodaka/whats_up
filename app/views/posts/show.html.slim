@@ -13,8 +13,11 @@
         .col-6 
           = simple_format(@post.body)
           - if current_user&.own(@post)
-            = link_to edit_post_path(@post), class: 'ml-auto' do 
-              = icon 'far', 'edit', class: 'fa-lg'
+            .ml-auto
+              = link_to post_path(post), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do 
+                = icon 'far', 'trash-alt', class: 'fa-lg'
+              = link_to edit_post_path(post) do
+                = icon 'far', 'edit', class: 'fa-lg'
     hr
     / コメント一覧
     .row.no-gutters
