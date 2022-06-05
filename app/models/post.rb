@@ -20,4 +20,6 @@ class Post < ApplicationRecord
   belongs_to :user
 
   validates :body, presence: true, length: { maximum: 1000 }
+
+  has_many :comments, dependent: :destroy
 end

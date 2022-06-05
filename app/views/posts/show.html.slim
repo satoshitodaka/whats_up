@@ -20,24 +20,7 @@
                 = icon 'far', 'edit', class: 'fa-lg'
     hr
     / コメント一覧
-    .row.no-gutters
-      .col-2
-        = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
-      .col-10 
-        | ダミーコメント
-    .row.no-gutters
-      .col-2
-        = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
-      .col-10 
-        | ダミーコメント
-    .row.no-gutters
-      .col-2
-        = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
-      .col-10 
-        | ダミーコメント
+    = render 'comments/comment', comments: @comments 
     hr.m-0
     .post-comment.p-3 
-      form.form-inline.mb-0
-        input type="text" class="form-control input-comment-body" placeholder="コメント"
-        button type="submit" class="btn btn-primary btn-raised"
-          | 投稿
+      = render 'comments/form', post: @post, comment: @comment
