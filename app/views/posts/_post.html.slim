@@ -1,5 +1,5 @@
 = link_to post_path(post) do 
-  .card 
+  .card.mb-5 id="post-#{post.id}"
     .card-header 
       .d-flex.align-items-center
         = image_tag 'profile-placeholder.jpg', size: '40x40', class: 'rounded-circle mr-1'
@@ -9,7 +9,7 @@
         = post.body
         - if current_user&.own?(post)
           .ml-auto
-            = link_to post_path(post), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' } do 
+            = link_to post_path(post), class: 'mr-3 delete-button', method: :delete, data: { confirm: '本当に削除しますか？' } do 
               = icon 'far', 'trash-alt', class: 'fa-lg'
-            = link_to edit_post_path(post) do
+            = link_to edit_post_path(post), class: 'edit-button' do
               = icon 'far', 'edit', class: 'fa-lg'
