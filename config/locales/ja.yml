@@ -15,7 +15,7 @@ ja:
         body: '本文'
       comment:
         body: 'コメント'
-        user_id: ''ユーザー'
+        user_id: 'ユーザー'
         post_id: '投稿'
     errors:
       messages:
