@@ -2,4 +2,4 @@
   | alert("#{@comments.errors.full_messages.join('\n')}");
 - else 
   | $("#comment-#{@comment.id}").html("#{j render('comments/comment', comment: @comment)}");
-  | $("#comment-edit-modak").modal('hide');
+  | $("#comment-edit-modal").modal('hide');
