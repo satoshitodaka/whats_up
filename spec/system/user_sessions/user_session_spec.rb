@@ -33,7 +33,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
     end
     it 'ログアウトできること' do
       click_on('ログアウト')
-      expect(current_path).to eq root_path
+      expect(current_path).to eq login_path
       expect(page).to have_content 'ログアウトしました'
     end
   end

@@ -3,12 +3,15 @@ ja:
   activerecord:
     model:
       user: 'ユーザー'
+      post: '投稿'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         username: 'ユーザー名'
+      post:
+        body: '本文'
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
